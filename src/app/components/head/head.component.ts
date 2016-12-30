@@ -6,18 +6,24 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
   styleUrls: ['./head.component.css'],
   animations: [
     trigger('flyInOut', [
-      state('void', style({
-        transform: 'translateY(-100%)'
+      state('hideY', style({
+        display: 'none'
       })),
-      transition('* <=> *', [
-        animate(1000)
-      ])
+      transition('* => hideY', animate('1000ms ease-out', style({
+        height: '0px'
+      }))),
+      transition('hideY => *', [
+        style({height: '0px'}),
+        animate('1000ms ease-in', style({
+          height: '*'
+        })
+      )])
     ])
   ]
 })
 export class HeadComponent implements OnInit {
 
-  isNavShowed: Boolean = false;
+  toggle: string = 'hideY';
 
   constructor() { }
 
@@ -25,7 +31,7 @@ export class HeadComponent implements OnInit {
   }
 
   toggleState() {
-    this.isNavShowed = !this.isNavShowed;
+    this.toggle = this.toggle === 'hideY' ? 'showY' : 'hideY';
   }
 
 }

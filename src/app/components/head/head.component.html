@@ -1,18 +1,20 @@
-<div class="navbar-collapse inverse" [@flyInOut]="'in'" *ngIf="isNavShowed">
+<div class="navbar-collapse" [@flyInOut]="toggle">
   <div class="container-fluid">
-    <div class="about">
-      <h4>About</h4>
-      <p class="text-muted">
-        This app is for listing images in mulitple formats
-      </p>
-    </div>
-    <div class="social">
-      <h4>Contact</h4>
-      <ul class="list-unstyled">
-        <li><a href="#">Follow on Twitter</a></li>
-        <li><a href="#">Like on Facebook</a></li>
-        <li><a href="#">Email me</a></li>
-      </ul>
+    <div class="row">
+      <div class="col-md-8 about">
+        <h4>About</h4>
+        <p class="text-muted">
+          This app is for listing images in mulitple formats
+        </p>
+      </div>
+      <div class="col-md-4 social">
+        <h4>Contact</h4>
+        <ul class="list-unstyled">
+          <li><a href="#">Follow on Twitter</a></li>
+          <li><a href="#">Like on Facebook</a></li>
+          <li><a href="#">Email me</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
