@@ -7,14 +7,16 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
   animations: [
     trigger('flyInOut', [
       state('hideY', style({
-        display: 'none'
+        display: 'none'  //  Apply style After anim end
       })),
-      transition('* => hideY', animate('1000ms ease-out', style({
-        height: '0px'
-      }))),
+      transition('* => hideY',
+        animate('1000ms ease-out', style({  // Style while animation
+          height: '0px'
+        })
+      )),
       transition('hideY => *', [
-        style({height: '0px'}),
-        animate('1000ms ease-in', style({
+        style({height: '0px'}),  // Apply style Before anim start
+        animate('1000ms ease-in', style({  // Style while animation
           height: '*'
         })
       )])
@@ -31,7 +33,7 @@ export class HeadComponent implements OnInit {
   }
 
   toggleState() {
-    this.toggle = this.toggle === 'hideY' ? 'showY' : 'hideY';
+    this.toggle = this.toggle === 'hideY' ? '' : 'hideY';
   }
 
 }

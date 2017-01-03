@@ -1,5 +1,5 @@
 export interface Imgmeta {
-  title: string;
-  url: string;
-  date: Date;
+  description: string;
+  url_s: string;
+  date_taken: string;
 }

@@ -12,13 +12,13 @@ export class TableuComponent implements OnInit {
 
   imgsData: Imgmeta[];
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {}
 
-  getData(): void {
-    this.appService.getData().then(data => this.imgsData = data);
+  getData(data: Imgmeta[]): void {
+    this.imgsData = data;
   }
 
   ngOnInit(): void {
-    this.getData();
+    this.appService.getFlickrImgs(this.getData.bind(this));
   }
 }

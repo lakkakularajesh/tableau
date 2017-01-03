@@ -22,7 +22,9 @@
         "../node_modules/font-awesome/css/font-awesome.min.css",
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/flickrapi/browser/flickrapi.dev.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

@@ -1,21 +1,35 @@
 import { Injectable } from '@angular/core';
 import { Imgmeta } from './imgmeta';
+import { Observable } from 'RxJS/Rx';
 
 @Injectable()
 export class AppService {
 
-  getData(): Promise<Imgmeta[]> {
-    return Promise.resolve([
-      { title: 'winter',
-        url: 'https://images.pexels.com/photos/6993/snow-winter-christmas-deer.jpg?h=350&auto=compress&cs=tinysrgb',
-        date: new Date() },
-      { title: 'summer',
-        url: 'https://cdn4.dogonews.com/images/5410c143-ac45-4dc5-9a0e-634ee17ca447/800px-it-s_summer_time_04.jpg',
-        date: new Date() },
-      { title: 'spring',
-        url: 'https://images.pexels.com/photos/28585/pexels-photo-28585.jpg?h=350&auto=compress&cs=tinysrgb',
-        date: new Date() }
-    ]);
+  flickr: any;
+
+  constructor() {
+    this.flickr = new Flickr({
+      api_key: '',
+      secret: ''
+    });
+  }
+
+  getFlickrImgs(onNext: any): void {
+    this.flickr.photos.getRecent({
+      extras: ['description', 'license', 'date_upload', 'date_taken',
+          'owner_name', 'icon_server', 'original_format', 'last_update',
+          'geo', 'tags', 'machine_tags', 'o_dims', 'views', 'media', 'path_alias',
+          'url_sq', 'url_t', 'url_s', 'url_q', 'url_m', 'url_n', 'url_z', 'url_c', 'url_l', 'url_o'],
+      per_page: 10
+    }, function(err, result) {
+      if (err) {
+        throw new Error(err);
+      }
+      let temp: any = Observable.create(observer => {
+        observer.next(result.photos.photo);
+      });
+      temp.subscribe(onNext);
+    });
   }
 
 }
