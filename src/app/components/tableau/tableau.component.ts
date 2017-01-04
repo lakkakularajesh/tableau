@@ -3,12 +3,12 @@ import { AppService } from '../../app.service';
 import { Imgmeta } from '../../imgmeta';
 
 @Component({
-  selector: 'app-tableu',
-  templateUrl: './tableu.component.html',
-  styleUrls: ['./tableu.component.css'],
+  selector: 'app-tableau',
+  templateUrl: './tableau.component.html',
+  styleUrls: ['./tableau.component.css'],
   providers: [AppService]
 })
-export class TableuComponent implements OnInit {
+export class TableauComponent implements OnInit {
 
   imgsData: Imgmeta[];
 

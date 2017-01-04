@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Imgmeta } from './imgmeta';
-import { Observable } from 'RxJS/Rx';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class AppService {
@@ -9,8 +9,8 @@ export class AppService {
 
   constructor() {
     this.flickr = new Flickr({
-      api_key: '',
-      secret: ''
+      api_key: '5658a57681bd0f6e4d62d3e60332657b',
+      secret: 'c36b8ebf759b625f'
     });
   }
 
@@ -25,7 +25,7 @@ export class AppService {
       if (err) {
         throw new Error(err);
       }
-      let temp: any = Observable.create(observer => {
+      let temp = Observable.create(observer => {
         observer.next(result.photos.photo);
       });
       temp.subscribe(onNext);

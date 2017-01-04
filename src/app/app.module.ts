@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HeadComponent } from './components/head/head.component';
-import { TableuComponent } from './components/tableu/tableu.component';
+import { TableauComponent } from './components/tableau/tableau.component';
 
 @NgModule({
   declarations: [
     HeadComponent,
-    TableuComponent
+    TableauComponent
   ],
   imports: [
     BrowserModule,
@@ -17,6 +17,6 @@ import { TableuComponent } from './components/tableu/tableu.component';
     HttpModule
   ],
   providers: [],
-  bootstrap: [HeadComponent, TableuComponent]
+  bootstrap: [HeadComponent, TableauComponent]
 })
 export class AppModule { }

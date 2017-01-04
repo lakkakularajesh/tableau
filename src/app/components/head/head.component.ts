@@ -23,17 +23,12 @@ import { Component, OnInit, trigger, state, style, transition, animate } from '@
     ])
   ]
 })
-export class HeadComponent implements OnInit {
+export class HeadComponent {
 
   toggle: string = 'hideY';
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   toggleState() {
-    this.toggle = this.toggle === 'hideY' ? '' : 'hideY';
+    this.toggle = (this.toggle === 'hideY') ? '' : 'hideY';
   }
 
 }
