@@ -9,8 +9,8 @@ export class AppService {
 
   constructor() {
     this.flickr = new Flickr({
-      api_key: '5658a57681bd0f6e4d62d3e60332657b',
-      secret: 'c36b8ebf759b625f'
+      api_key: '',
+      secret: ''
     });
   }
 
