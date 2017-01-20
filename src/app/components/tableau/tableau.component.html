@@ -1,5 +1,11 @@
-<div class="container-flex">
-  <div class="item" *ngFor="let each of imgsData">
-    <img [src]="each.url_s" [width]="each.width_s" [height]="each.height_s" [title]="each.title" />
-  </div>
-</div>
+<h3>Flickr Public Pics</h3>
+<md-grid-list cols="6" rowHeight="4:3">
+  <md-grid-tile
+      *ngFor="let each of imgsData">
+    <img [src]="each.url_s" [title]="each.title" />
+    <md-grid-tile-footer *ngIf="each.date_taken || each.geo">
+      {{each.date_taken}} <br/>
+      {{each.geo}}
+    </md-grid-tile-footer>
+  </md-grid-tile>
+</md-grid-list>

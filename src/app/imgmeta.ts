@@ -5,4 +5,6 @@ export interface Imgmeta {
   height_s: string;
   title: string;
   date_taken: string;
+  geo: string;
+  url_o: string;
 }

@@ -9,8 +9,7 @@ export class AppService {
 
   constructor() {
     this.flickr = new Flickr({
-      api_key: '',
-      secret: ''
+      api_key: '0508bd906a213e36fd94f377b592be9d'
     });
   }
 
@@ -19,8 +18,8 @@ export class AppService {
       extras: ['description', 'license', 'date_upload', 'date_taken',
           'owner_name', 'icon_server', 'original_format', 'last_update',
           'geo', 'tags', 'machine_tags', 'o_dims', 'views', 'media', 'path_alias',
-          'url_sq', 'url_t', 'url_s', 'url_q', 'url_m', 'url_n', 'url_z', 'url_c', 'url_l', 'url_o'],
-      per_page: 10
+          'url_sq', 'url_t', 'url_s', 'url_q', 'url_m', 'url_n', 'url_z', 'url_c', 'url_l', 'url_o']
+      //per_page: 10
     }, function(err, result) {
       if (err) {
         throw new Error(err);
@@ -30,6 +29,10 @@ export class AppService {
       });
       temp.subscribe(onNext);
     });
+  }
+
+  getPicasaImgs(onNext: any): void {
+
   }
 
 }

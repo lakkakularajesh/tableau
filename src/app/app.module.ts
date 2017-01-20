@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 
 import { HeadComponent } from './components/head/head.component';
 import { TableauComponent } from './components/tableau/tableau.component';
@@ -14,7 +15,8 @@ import { TableauComponent } from './components/tableau/tableau.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    MaterialModule.forRoot()
   ],
   providers: [],
   bootstrap: [HeadComponent, TableauComponent]
