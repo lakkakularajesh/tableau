@@ -9,7 +9,7 @@ export class AppService {
 
   constructor() {
     this.flickr = new Flickr({
-      api_key: '0508bd906a213e36fd94f377b592be9d'
+      api_key: ''
     });
   }
 
