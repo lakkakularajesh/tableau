@@ -1,16 +1,16 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { AppService } from './app.service';
+import { FlickrService } from './flickr.service';
 
-describe('AppService', () => {
+describe('FlickrService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AppService]
+      providers: [FlickrService]
     });
   });
 
-  it('should ...', inject([AppService], (service: AppService) => {
+  it('should ...', inject([FlickrService], (service: FlickrService) => {
     expect(service).toBeTruthy();
   }));
 });

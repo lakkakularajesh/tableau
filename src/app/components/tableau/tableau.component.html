@@ -1,7 +1,7 @@
-<h3>Flickr Public Pics</h3>
+<h3>Public Pics</h3>
 <md-grid-list cols="6" rowHeight="4:3">
   <md-grid-tile
-      *ngFor="let each of imgsData">
+      *ngFor="let each of photos | async">
     <img [src]="each.url_s" [title]="each.title" />
     <md-grid-tile-footer *ngIf="each.date_taken || each.geo">
       {{each.date_taken}} <br/>

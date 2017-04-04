@@ -6,6 +6,9 @@ import { MaterialModule } from '@angular/material';
 
 import { HeadComponent } from './components/head/head.component';
 import { TableauComponent } from './components/tableau/tableau.component';
+import { FlickrService } from './services/flickr.service';
+import { PicasaService } from './services/picasa.service';
+import { DropboxService } from './services/dropbox.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,7 @@ import { TableauComponent } from './components/tableau/tableau.component';
     HttpModule,
     MaterialModule.forRoot()
   ],
-  providers: [],
+  providers: [FlickrService, PicasaService, DropboxService],
   bootstrap: [HeadComponent, TableauComponent]
 })
 export class AppModule { }
